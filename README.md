@@ -26,11 +26,16 @@ date,btc_close,eth_close
 ...
 Ensure at least 30 rows of data for training to work correctly.
 
+---
+
 ## 🛠️ Installation
+
 Install the required Python libraries:
 
 ```bash
 pip install pandas numpy tensorflow scikit-learn
+
+---
 
 ## ▶️ How to Run
 Make sure your script is named something like crypto_dual_predictor.py, then run:
