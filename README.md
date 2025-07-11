@@ -26,46 +26,39 @@ date,btc_close,eth_close
 ...
 Ensure at least 30 rows of data for training to work correctly.
 
-🛠️ Installation
+## 🛠️ Installation
 Install the required Python libraries:
 
-bash
-Copy
-Edit
+```bash
 pip install pandas numpy tensorflow scikit-learn
-▶️ How to Run
+
+## ▶️ How to Run
 Make sure your script is named something like crypto_dual_predictor.py, then run:
 
-bash
-Copy
-Edit
+```bash
 python crypto_dual_predictor.py
+
 📤 Sample Output
+
 yaml
-Copy
-Edit
 🔮 BTC: ↑ Increase | Change: +1.72% | Predicted: $63,800.40
 🔮 ETH: ↓ Decrease | Change: -0.44% | Predicted: $3,392.50
-🧠 How It Works
+## 🧠 How It Works
 Input: Last 24 days of historical BTC & ETH prices
 
 Model:
 
 2 LSTM layers shared for both assets
-
 2 output heads:
-
-BTC: probability of increase
-
-ETH: probability of increase
+- BTC: probability of increase
+- ETH: probability of increase
 
 Post-processing:
 
 Probabilities converted to direction (↑/↓)
-
 Estimated percentage change and predicted price computed from current value
 
-📌 Future Enhancements
+##📌 Future Enhancements
 🔗 Fetch live price data from CoinGecko or Binance API
 
 💾 Save & load model using .h5
