@@ -24,9 +24,7 @@ date,btc_close,eth_close
 2025-04-01,62900.00,3520.00
 2025-04-02,63120.50,3545.20
 ...
-Ensure at least 30 rows of data for training to work correctly.
-
----
+```
 
 ## 🛠️ Installation
 
@@ -34,40 +32,43 @@ Install the required Python libraries:
 
 ```bash
 pip install pandas numpy tensorflow scikit-learn
-
----
+```
 
 ## ▶️ How to Run
 Make sure your script is named something like crypto_dual_predictor.py, then run:
 
 ```bash
 python crypto_dual_predictor.py
+```
 
-📤 Sample Output
+## 📤 Sample Output
 
-yaml
-🔮 BTC: ↑ Increase | Change: +1.72% | Predicted: $63,800.40
+```text
+🔮 BTC: ↑ Increase | Change: +1.72% | Predicted: $63,800.40  
 🔮 ETH: ↓ Decrease | Change: -0.44% | Predicted: $3,392.50
+```
+
 ## 🧠 How It Works
+
 Input: Last 24 days of historical BTC & ETH prices
-
 Model:
+- 2 LSTM layers shared for both assets
+- 2 output heads:
 
-2 LSTM layers shared for both assets
-2 output heads:
-- BTC: probability of increase
-- ETH: probability of increase
+BTC: probability of price increase
+ETH: probability of price increase
 
 Post-processing:
+- Probabilities converted to direction (↑ / ↓)
+- Estimated percentage change calculated from probability
 
-Probabilities converted to direction (↑/↓)
-Estimated percentage change and predicted price computed from current value
+Final predicted price computed from last known value
 
-##📌 Future Enhancements
-🔗 Fetch live price data from CoinGecko or Binance API
+## 📌 Future Enhancements
+- 🔗 Fetch live price data from CoinGecko or Binance API
 
-💾 Save & load model using .h5
+- 💾 Save & load model weights using .h5
 
-🌐 Build a REST API using Flask or FastAPI
+- 🌐 Build a REST API using Flask or FastAPI
 
-🧩 Integrate predictions into a Web3 dashboard
+- 🧩 Integrate real-time predictions into a Web3 dashboard
